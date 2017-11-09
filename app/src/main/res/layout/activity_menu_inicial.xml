@@ -53,14 +53,18 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Chamar Segurança" />
+                android:text="Chamar Segurança"
+                android:onClick="chamar"
+                />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Contato" />
+                android:text="Contato"
+                android:onClick="funcContato"
+                />
 
         </LinearLayout>
 
@@ -82,7 +86,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Dicas" />
+                android:text="Dicas"
+                android:onClick="funcDicas"
+                />
 
 
         </LinearLayout>

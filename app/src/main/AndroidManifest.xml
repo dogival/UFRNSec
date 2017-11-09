@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".EmergenciaActivity" />
         <activity android:name=".RouboActivity"></activity>
+        <activity android:name=".dicasActivity"></activity>
+        <activity android:name=".contatoActivity"></activity>
     </application>
 
 </manifest>

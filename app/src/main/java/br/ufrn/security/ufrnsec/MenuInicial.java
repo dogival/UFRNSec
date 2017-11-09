@@ -17,6 +17,44 @@ public class MenuInicial extends AppCompatActivity {
 
     public static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 99;
 
+    public void funcContato(View view){
+        Intent it = new Intent(MenuInicial.this, contatoActivity.class);
+        startActivity(it);
+    }
+
+    public void funcDicas(View view){
+        Intent it = new Intent(MenuInicial.this, dicasActivity.class);
+        startActivity(it);
+    }
+
+    public void chamar(View view){
+        try {
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:84988175658"));
+            if (ContextCompat.checkSelfPermission(MenuInicial.this,
+                    Manifest.permission.CALL_PHONE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MenuInicial.this);
+                alertBuilder.setCancelable(true);
+                alertBuilder.setMessage("Necessário permissão para fazer ligações!");
+                alertBuilder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityCompat.requestPermissions(MenuInicial.this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_CALL_PHONE);
+                    }
+                });
+            }
+            
+                ActivityCompat.requestPermissions(MenuInicial.this,
+                        new String[]{Manifest.permission.CALL_PHONE},
+                        MY_PERMISSIONS_REQUEST_CALL_PHONE);
+                startActivity(callIntent);
+
+        } catch (ActivityNotFoundException activityException) {
+            Log.e("Chamando a segurança", "Ligação falhou", activityException);
+        }
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,35 +69,5 @@ public class MenuInicial extends AppCompatActivity {
             }
         });
 
-        Button botaoChamarSeg = (Button) findViewById(R.id.chamarSeguranca);
-
-        botaoChamarSeg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    Intent callIntent = new Intent(Intent.ACTION_CALL);
-                    callIntent.setData(Uri.parse("tel:84988175658"));
-                    if (ContextCompat.checkSelfPermission(MenuInicial.this,
-                            Manifest.permission.CALL_PHONE)
-                            != PackageManager.PERMISSION_GRANTED) {
-                        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MenuInicial.this);
-                        alertBuilder.setCancelable(true);
-                        alertBuilder.setMessage("Necessário permissão para fazer ligações!");
-                        alertBuilder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                ActivityCompat.requestPermissions(MenuInicial.this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_CALL_PHONE);
-                            }
-                        });
-                    } else {
-                        ActivityCompat.requestPermissions(MenuInicial.this,
-                                new String[]{Manifest.permission.CALL_PHONE},
-                                MY_PERMISSIONS_REQUEST_CALL_PHONE);
-                        startActivity(callIntent);
-                    }
-                } catch (ActivityNotFoundException activityException) {
-                    Log.e("Chamando a segurança", "Ligação falhou", activityException);
-                }
-            }
-        });
     }
 }
