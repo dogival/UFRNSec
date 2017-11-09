@@ -50,18 +50,17 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="Button"
-                />
+                android:layout_weight="1"
+                android:text="Chamar Segurança" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="Button" />
+                android:layout_weight="1"
+                android:text="Contato" />
 
         </LinearLayout>
 
@@ -73,17 +72,17 @@
 
             <Button
                 android:id="@+id/button5"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="Button" />
+                android:layout_weight="1"
+                android:text="Estatísticas" />
 
             <Button
                 android:id="@+id/button6"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="Button" />
+                android:layout_weight="1"
+                android:text="Dicas" />
 
 
         </LinearLayout>
