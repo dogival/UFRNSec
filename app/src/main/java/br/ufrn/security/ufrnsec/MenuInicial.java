@@ -2,6 +2,7 @@ package br.ufrn.security.ufrnsec;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.NotificationManager;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
@@ -11,6 +12,7 @@ import android.location.LocationListener;
 import android.net.Uri;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +21,8 @@ import android.content.*;
 import android.util.Log;
 import android.widget.*;
 import android.view.*;
+
+import static android.app.NotificationChannel.DEFAULT_CHANNEL_ID;
 
 public class MenuInicial extends AppCompatActivity {
 

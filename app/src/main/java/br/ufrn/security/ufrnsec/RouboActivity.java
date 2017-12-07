@@ -1,8 +1,11 @@
 package br.ufrn.security.ufrnsec;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Environment;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +20,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.TimeZone;
+
+import static android.app.NotificationChannel.DEFAULT_CHANNEL_ID;
 
 public class RouboActivity extends AppCompatActivity {
 
@@ -61,6 +66,16 @@ public class RouboActivity extends AppCompatActivity {
     }
 
     public void onSubmmitClick(View view){
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(RouboActivity.this, DEFAULT_CHANNEL_ID )
+                        .setSmallIcon(R.drawable.ic_stat_security)
+                        .setContentTitle("Descrição Enviada")
+                        .setContentText("A segurança da UFRN está a caminho!")
+                        .setAutoCancel(true);
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(2600, mBuilder.build());
+
         File root = android.os.Environment.getExternalStorageDirectory();
         File dir = new File (root.getAbsolutePath() + "/UFRNSec Logs");
         dir.mkdirs();
