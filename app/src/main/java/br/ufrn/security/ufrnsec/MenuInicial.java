@@ -132,7 +132,7 @@ public class MenuInicial extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 
-        ImageButton botaoEmergencia = (ImageButton) findViewById(R.id.emergencia);
+        Button botaoEmergencia = (Button) findViewById(R.id.emergencia);
 
         botaoEmergencia.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

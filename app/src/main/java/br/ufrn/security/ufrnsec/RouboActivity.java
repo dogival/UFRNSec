@@ -1,6 +1,7 @@
 package br.ufrn.security.ufrnsec;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class RouboActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roubo);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //final EditText descricaoOcorrido = (EditText) findViewById(R.id.descricaoText);
         //descricao = descricaoOcorrido.getText().toString();
