@@ -8,6 +8,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.AsyncTask;
 import android.content.*;
 import android.util.Log;
 import android.widget.*;
@@ -60,7 +61,7 @@ public class MenuInicial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_inicial);
 
-        Button botaoEmergencia = (Button) findViewById(R.id.emergencia);
+        ImageButton botaoEmergencia = (ImageButton) findViewById(R.id.emergencia);
 
         botaoEmergencia.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
