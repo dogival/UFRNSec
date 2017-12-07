@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/UFRNSec.iml" filepath="$PROJECT_DIR$/UFRNSec.iml" />
       <module fileurl="file://D:\Felipe\UFRN\2017\Desenvolvimento disp moveis\Projeto\UFRNSec-master\UFRNSec-master\UFRNSec.iml" filepath="D:\Felipe\UFRN\2017\Desenvolvimento disp moveis\Projeto\UFRNSec-master\UFRNSec-master\UFRNSec.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UFRNSec-master.iml" filepath="$PROJECT_DIR$/UFRNSec-master.iml" />
+      <module fileurl="file://D:\Data\Downloads\AndroidStudioProjects\UFRNSec\UFRNSec-master.iml" filepath="D:\Data\Downloads\AndroidStudioProjects\UFRNSec\UFRNSec-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://D:\Felipe\UFRN\2017\Desenvolvimento disp moveis\Projeto\UFRNSec-master\UFRNSec-master\app\app.iml" filepath="D:\Felipe\UFRN\2017\Desenvolvimento disp moveis\Projeto\UFRNSec-master\UFRNSec-master\app\app.iml" />
     </modules>
