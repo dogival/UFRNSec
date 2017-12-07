@@ -3,8 +3,12 @@
     package="br.ufrn.security.ufrnsec">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+=======
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+>>>>>>> 3f5fe0492882a9a89df8e10971219c26f44710fc
 
     <application
         android:allowBackup="true"
