@@ -19,6 +19,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
 
 import static android.app.NotificationChannel.DEFAULT_CHANNEL_ID;
@@ -27,6 +28,9 @@ public class RouboActivity extends AppCompatActivity {
 
     String descricao;
     String tempo;
+    double longitude;
+    double latitude;
+
     private static final String TAG = "MEDIA";
     TimeZone tz = TimeZone.getTimeZone("GMT-3:00");
 
@@ -61,8 +65,8 @@ public class RouboActivity extends AppCompatActivity {
             // Can't read or write
             mExternalStorageAvailable = mExternalStorageWriteable = false;
         }
-        Toast.makeText(RouboActivity.this,"\n\nExternal Media: readable="
-                +mExternalStorageAvailable+" writable="+mExternalStorageWriteable,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(RouboActivity.this,"\n\nExternal Media: readable="
+                //+mExternalStorageAvailable+" writable="+mExternalStorageWriteable,Toast.LENGTH_SHORT).show();
     }
 
     public void onSubmmitClick(View view){
@@ -79,8 +83,16 @@ public class RouboActivity extends AppCompatActivity {
         File root = android.os.Environment.getExternalStorageDirectory();
         File dir = new File (root.getAbsolutePath() + "/UFRNSec Logs");
         dir.mkdirs();
-        //String filearq = "Log"+Calendar.getInstance().toString();
-        File file = new File(dir, "LOG.txt");
+        String pasta = dir.getAbsolutePath();
+        Date data = new Date();
+        File file = new File(pasta + "/Ocorrencia" + data.toString() + ".txt");
+        Intent it2 = getIntent();
+        Bundle param = it2.getExtras();
+
+
+
+        longitude = param.getDouble("longitude");
+        latitude = param.getDouble("latitude");
 
         try {
             FileOutputStream f = new FileOutputStream(file);
@@ -93,8 +105,15 @@ public class RouboActivity extends AppCompatActivity {
             EditText tempoOcorrido = (EditText) findViewById(R.id.tempoText);
             tempo = tempoOcorrido.getText().toString();
 
+            pw.println("=====================================================================");
+            pw.println("Ocorrencia de roubo - " + data.toString());
+            pw.print("Descrição: ");
             pw.println(descricao);
+            pw.print("Hora do ocorrido: ");
             pw.println(tempo);
+            pw.print("Localização: ");
+            pw.println(latitude + ", " + longitude);
+            pw.println("=====================================================================");
             pw.flush();
             pw.close();
 
